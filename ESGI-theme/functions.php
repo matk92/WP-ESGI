@@ -38,6 +38,11 @@ function esgi_register_nav_menu()
         'primary_menu' => __('Primary Menu', 'ESGI'),
         'footer_menu'  => __('Footer Menu', 'ESGI'),
     ]);
+
+    register_nav_menus([
+        'primary_menu' => __('Primary Menu', 'ESGI'),
+        'footer_menu'  => __('Footer Menu', 'ESGI'),
+    ]);
 }
 
 
@@ -64,7 +69,6 @@ function esgi_getIcon($name)
     return $$name;  // nom de variable dynamique
 
 }
-
 
 // Customizer du thème
 add_action('customize_register', 'esgi_customize_register');
@@ -136,6 +140,41 @@ function esgi_customize_register($wp_customize)
         'label' => __('Afficher la sidebar'),
         'description' => __('(Uniquement sur les articles)'),
     ]);
+
+    $wp_customize->add_setting('has_footer_search', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => false,
+        'sanitize_callback' => 'esgi_bool_sanitize',
+    ]);
+
+    $wp_customize->add_control('has_footer_search', [
+        'type' => 'checkbox',
+        'section' => 'esgi_section',
+        'label' => __('Afficher la recherche dans le footer', 'ESGI'),
+        'description' => __('Activez pour afficher un formulaire de recherche dans le footer.', 'ESGI'),
+    ]);
+
+    $social_networks = [
+        'twitter' => 'twitter',
+        'facebook' => 'facebook',
+        'google' => 'google',
+        'linkedin' => 'linkedIn',
+    ];
+    
+    foreach ($social_networks as $network => $label) {
+        $wp_customize->add_setting("url_{$network}", [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_url_raw', 
+        ]);
+    
+        $wp_customize->add_control("url_{$network}", [
+            'type' => 'url',
+            'section' => 'esgi_section',
+            'label' => sprintf(__('URL %s', 'ESGI'), $label),
+        ]);
+    }
 }
 
 function esgi_bool_sanitize($value)
@@ -181,4 +220,17 @@ function ajax_load_posts()
     // echo le contenu du buffer
     echo ob_get_clean();
     wp_die();
+}
+
+add_action('widgets_init', 'esgi_widgets_init');
+function esgi_widgets_init() {
+    register_sidebar(array(
+        'name'          => __('Zone de widgets du footer', 'ESGI'),
+        'id'            => 'footer-widget-area',
+        'description'   => __('Ajoutez des widgets ici pour les voir dans le footer.', 'ESGI'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
 }
