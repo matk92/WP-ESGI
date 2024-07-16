@@ -175,6 +175,103 @@ function esgi_customize_register($wp_customize)
             'label' => sprintf(__('URL %s', 'ESGI'), $label),
         ]);
     }
+    // Section "About Us"
+    $wp_customize->add_section('about_us_section', array(
+        'title' => __('About Us', 'theme_textdomain'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('about_us_description', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('about_us_description', array(
+        'label' => __('Description', 'theme_textdomain'),
+        'section' => 'about_us_section',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('about_us_image', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_us_image', array(
+        'label' => __('About Us Image', 'theme_textdomain'),
+        'section' => 'about_us_section',
+        'settings' => 'about_us_image',
+    )));
+
+
+    $wp_customize->add_setting('about_us_who_we_are', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('about_us_who_we_are', array(
+        'label' => __('Who are we?', 'theme_textdomain'),
+        'section' => 'about_us_section',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('about_us_vision', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('about_us_vision', array(
+        'label' => __('Our Vision', 'theme_textdomain'),
+        'section' => 'about_us_section',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('about_us_mission', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('about_us_mission', array(
+        'label' => __('Our Mission', 'theme_textdomain'),
+        'section' => 'about_us_section',
+        'type' => 'textarea',
+    ));
+
+    // Section "Services"
+    $wp_customize->add_section('services_section', array(
+        'title' => __('Services', 'theme_textdomain'),
+        'priority' => 31,
+    ));
+
+    $wp_customize->add_setting('services_description', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('services_description', array(
+        'label' => __('Services Description', 'theme_textdomain'),
+        'section' => 'services_section',
+        'type' => 'textarea',
+    ));
+
+    // Section "Partners"
+    $wp_customize->add_section('partners_section', array(
+        'title' => __('Partners', 'theme_textdomain'),
+        'priority' => 32,
+    ));
+
+    for($i = 1; $i <= 6; $i++) {
+        $wp_customize->add_setting('partner_logo_'.$i, array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'partner_logo_'.$i, array(
+            'label' => __('Partner Logo '.$i, 'theme_textdomain'),
+            'section' => 'partners_section',
+            'settings' => 'partner_logo_'.$i,
+        )));
+    }
 }
 
 function esgi_bool_sanitize($value)
