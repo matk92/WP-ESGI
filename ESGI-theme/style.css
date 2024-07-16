@@ -4481,6 +4481,7 @@ summary {
   --white: #fff;
   --black: #000;
   --grey: #555;
+  --blue: #050A3A;
   --bg-color: var(--white);
   --text-color: var(--black);
 }
@@ -4491,7 +4492,7 @@ body {
   color: var(--text-color);
 }
 body.dark {
-  --bg-color: var(--black);
+  --bg-color: var(--blue);
   --text-color: var(--white);
 }
 
@@ -4732,7 +4733,7 @@ svg:hover path {
 }
 
 .row {
-  font-family: "Muli", sans-serif;
+  font-family: "Mulish", sans-serif;
   background-color: #050A3A;
   color: #fff;
   padding: 20px;
@@ -4749,8 +4750,12 @@ p {
   font-weight: normal;
 }
 
-.search-bar-selector { /* Remplacez .search-bar-selector par le sélecteur CSS réel de votre barre de recherche */
-  background-color: blue; /* Vous pouvez utiliser une couleur spécifique comme #0000FF ou une variable SCSS si vous en utilisez */
+.container {
+  font-family: "Mulish", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map */
