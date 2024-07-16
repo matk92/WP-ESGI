@@ -14,7 +14,7 @@ body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	&.dark {
-		--bg-color: var(--black);
+		--bg-color: var(--blue);
 		--text-color: var(--white);
 	}
 }
