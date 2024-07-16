@@ -1,20 +1,28 @@
-<footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <p>Manager: <a href="tel:+33153312523">+33 1 53 31 25 23</a> | <a href="mailto:info@esgi.com">info@esgi.com</a></p>
-                    <p>CEO: <a href="tel:+33153312525">+33 1 53 31 25 25</a> | <a href="mailto:ceo@company.com">ceo@company.com</a></p>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="copyright">
-                    <p>© 2022 Figma Template by ESGI</p>
-                </div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-left">
+            <h1 class="footer-logo">ESGI.</h1>
+            <p>2022 Figma Template by ESGI</p>
+        </div>
+        <div class="footer-right">
+            <div class="contact-info">
+                <h2>Manager</h2>
+                <p>+33 1 53 31 25 23</p>
+                <p>info@esgi.com</p>
+            </div>
+            <div class="contact-info">
+                <h2>CEO</h2>
+                <p>+33 1 53 31 25 25</p>
+                <p>ceo@company.com</p>
+            </div>
+            <div class="social-media">
+                <a href="#" class="social-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="facebook-icon.png" alt="Facebook">
+                </a>
             </div>
         </div>
-    </footer>
-    <?php wp_footer(); ?>
-</body>
-</html>
+    </div>
+</footer>
