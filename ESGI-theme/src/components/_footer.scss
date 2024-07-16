@@ -1,5 +1,33 @@
-#site-footer {
-	text-align: center;
-	margin-top: rem(120);
-	padding: rem(40) 0;
+.footer-container {
+    background-color: #050A3A;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #0077b5; /* LinkedIn */
+    color: #3b5998; /* Facebook */
+}
+
+.copyright p {
+    margin: 10px 0 0;
 }
