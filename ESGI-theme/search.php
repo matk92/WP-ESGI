@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main id="site-main-wp" class="site-main-wp">
-    <div class="container">
+    <div class="container-search">
         <h1>Résultats de la recherche pour <?php echo get_search_query(); ?></h1>
         <?php
         $types = ['page' => 'Page(s)', 'post' => 'Article(s)'];

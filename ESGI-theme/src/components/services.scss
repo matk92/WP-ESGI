@@ -14,21 +14,11 @@
 
     .service-item {
       flex: 1 1 calc(33.333% - 20px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
       img {
         width: 480px;
         height: 320px;
         object-fit: cover;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 10px;
-        color: #050a3a;
       }
     }
   }

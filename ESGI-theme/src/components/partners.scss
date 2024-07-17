@@ -1,0 +1,25 @@
+.our-partners {
+  font-family: "Mulish", sans-serif;
+
+  h1 {
+    color: #050a3a;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 5%;
+  }
+
+  .partners-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .partner-item {
+      margin: 20px;
+
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+    }
+  }
+}

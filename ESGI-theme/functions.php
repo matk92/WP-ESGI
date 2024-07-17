@@ -243,7 +243,7 @@ function esgi_customize_register($wp_customize)
         'priority' => 35,
     ));
 
-    for ($i = 1; $i <= 3; $i++) {
+    for ($i = 1; $i <= 4; $i++) {
         // Image Setting
         $wp_customize->add_setting("service_image_$i", array(
             'default' => '',
@@ -256,32 +256,22 @@ function esgi_customize_register($wp_customize)
         )));
     }
 
-    $wp_customize->add_setting('service_private_parties_title', array(
-        'default' => 'Private Parties',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('service_private_parties_title', array(
-        'label' => __('Private Parties Title', 'theme_textdomain'),
-        'section' => 'services_section',
-        'type' => 'text',
-    ));
-
-    // Section "Partners"
+    // Section "Our Partners"
     $wp_customize->add_section('partners_section', array(
-        'title' => __('Partners', 'theme_textdomain'),
-        'priority' => 32,
+        'title' => __('Our Partners', 'theme_textdomain'),
+        'priority' => 40,
     ));
 
-    for($i = 1; $i <= 6; $i++) {
-        $wp_customize->add_setting('partner_logo_'.$i, array(
+    // Adding settings and controls for each partner logo
+    for ($i = 1; $i <= 6; $i++) {
+        $wp_customize->add_setting("partner_logo_$i", array(
             'default' => '',
             'sanitize_callback' => 'esc_url_raw',
         ));
-
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'partner_logo_'.$i, array(
-            'label' => __('Partner Logo '.$i, 'theme_textdomain'),
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "partner_logo_$i", array(
+            'label' => __("Partner Logo $i", 'theme_textdomain'),
             'section' => 'partners_section',
-            'settings' => 'partner_logo_'.$i,
+            'settings' => "partner_logo_$i",
         )));
     }
 }
