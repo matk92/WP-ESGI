@@ -84,11 +84,11 @@ function esgi_customize_register($wp_customize)
         'theme_supports' => '', // Rarely needed.
     ]);
 
-        // Ajouter un setting et un control pour le titre du héros
+        // Ajouter un setting et un control pour le titre
         $wp_customize->add_setting('top_title', [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
-            'default' => __('Welcome to ESGI'),
+            'default' => __('A really professional structure for all your events!'),
             'sanitize_callback' => 'sanitize_text_field',
         ]);
     
@@ -98,7 +98,7 @@ function esgi_customize_register($wp_customize)
             'type' => 'text',
         ]);
     
-        // Ajouter un setting et un control pour l'image du héros
+        // Ajouter un setting et un control pour l'image
         $wp_customize->add_setting('top_image', [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -210,7 +210,7 @@ function esgi_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('about_us_description', array(
-        'default' => '',
+        'default' => 'Specializing in the creation of exceptional events for private and corporate clients, we design, plan and manage every project from conception to execution. ',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
@@ -233,7 +233,7 @@ function esgi_customize_register($wp_customize)
 
 
     $wp_customize->add_setting('about_us_who_we_are', array(
-        'default' => '',
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu convallis elit, at convallis magna.',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
@@ -244,7 +244,7 @@ function esgi_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('about_us_vision', array(
-        'default' => '',
+        'default' => ' Nullam faucibus interdum massa. Duis eget leo mattis, pulvinar nisi et, consequat lectus. Suspendisse commodo magna orci, id luctus risus porta pharetra. Fusce vehicula aliquet urna non ultricies.',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
@@ -255,7 +255,7 @@ function esgi_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('about_us_mission', array(
-        'default' => '',
+        'default' => 'Vivamus et viverra neque, ut pharetra ipsum. Aliquam eget consequat libero, quis cursus tortor. Aliquam suscipit eros sit amet velit malesuada dapibus. Fusce in vehicula tellus. Donec quis lorem ut magna tincidunt egestas. ',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 

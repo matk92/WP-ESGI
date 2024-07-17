@@ -1,26 +1,42 @@
 #site-header {
-	@include heading3;
-	@include resetList;
-	margin: rem(48) 0;
-	.main-menu {
-		ul {
-			@include flexbox(row, nowrap, center, center, #{rem(45)});
-			@include resetList;
-			li {
-				a {
-					display: block;
-					padding: 0.5em;
-					@include resetLink;
-				}
-				&:hover,
-				&.current-menu-item,
-				&.current_page_parent {
-					a {
-						background-color: var(--main-color);
-						color: var(--white);
-					}
-				}
-			}
-		}
-	}
+  @include heading3;
+  @include resetList;
+  margin: rem(48) 0;
+  .main-menu {
+    ul {
+      @include flexbox(row, nowrap, center, center, #{rem(45)});
+      @include resetList;
+      li {
+        a {
+          display: block;
+          padding: 0.5em;
+          @include resetLink;
+        }
+        &:hover,
+        &.current-menu-item,
+        &.current_page_parent {
+          a {
+            background-color: var(--main-color);
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+}
+
+.top-title {
+  font-family: 'Mulish', sans-serif;
+  color: #050A3A;
+  font-size: 3em;
+  max-width: 50%;
+}
+
+.top-image {
+  width: 100%;
+  height: auto;	
+  float: right;
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
