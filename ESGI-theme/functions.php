@@ -237,21 +237,33 @@ function esgi_customize_register($wp_customize)
         'type' => 'textarea',
     ));
 
-    // Section "Services"
+    // Section "Our Services"
     $wp_customize->add_section('services_section', array(
-        'title' => __('Services', 'theme_textdomain'),
-        'priority' => 31,
+        'title' => __('Our Services', 'theme_textdomain'),
+        'priority' => 35,
     ));
 
-    $wp_customize->add_setting('services_description', array(
-        'default' => '',
+    for ($i = 1; $i <= 3; $i++) {
+        // Image Setting
+        $wp_customize->add_setting("service_image_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "service_image_$i", array(
+            'label' => __("Service Image $i", 'theme_textdomain'),
+            'section' => 'services_section',
+            'settings' => "service_image_$i",
+        )));
+    }
+
+    $wp_customize->add_setting('service_private_parties_title', array(
+        'default' => 'Private Parties',
         'sanitize_callback' => 'sanitize_text_field',
     ));
-
-    $wp_customize->add_control('services_description', array(
-        'label' => __('Services Description', 'theme_textdomain'),
+    $wp_customize->add_control('service_private_parties_title', array(
+        'label' => __('Private Parties Title', 'theme_textdomain'),
         'section' => 'services_section',
-        'type' => 'textarea',
+        'type' => 'text',
     ));
 
     // Section "Partners"

@@ -1,51 +1,53 @@
 .about-us {
-    font: 'Mulish', sans-serif;
-    color: #8A8A8A;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  font: "Mulish", sans-serif;
+  color: #8a8a8a;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 
-    h1 {
-        color: #050A3A;
-        font-size: 2.5em;
-        font-weight: 700;
-        margin-bottom: 10px;
+  h1 {
+    color: #050a3a;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 50%;
+    text-align: justify;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+
+    .image-container {
+      flex: 1;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
     }
 
-    .description {
-        font-size: 1.2em;
+    .custom-fields {
+      flex: 1;
+      margin-left: 20px;
+
+      h2 {
+        color: #050a3a;
+        font-size: 1.8em;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 1.1em;
+        line-height: 1.5;
         margin-bottom: 20px;
+      }
     }
-
-    .about-content {
-        display: flex;
-        align-items: center;
-
-        .image-container {
-            flex: 1;
-            text-align: center;
-
-            img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 10px;
-            }
-        }
-
-        .custom-fields {
-            flex: 1;
-            margin-left: 20px;
-
-            h2 {
-                color: #050A3A;
-                font-size: 1.8em;
-                margin-top: 0;
-            }
-
-            p {
-                font-size: 1.1em;
-                line-height: 1.5;
-                margin-bottom: 20px;
-            }
-        }
-    }
+  }
 }

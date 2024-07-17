@@ -4758,4 +4758,81 @@ p {
   text-align: left;
 }
 
+.about-us {
+  font: "Mulish", sans-serif;
+  color: #8a8a8a;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.about-us h1 {
+  color: #050a3a;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.about-us .description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  max-width: 50%;
+  text-align: justify;
+}
+.about-us .about-content {
+  display: flex;
+  align-items: center;
+}
+.about-us .about-content .image-container {
+  flex: 1;
+  text-align: center;
+}
+.about-us .about-content .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.about-us .about-content .custom-fields {
+  flex: 1;
+  margin-left: 20px;
+}
+.about-us .about-content .custom-fields h2 {
+  color: #050a3a;
+  font-size: 1.8em;
+  margin-top: 0;
+}
+.about-us .about-content .custom-fields p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.our-services {
+  font-family: "Mulish", sans-serif;
+}
+.our-services h1 {
+  color: #050a3a;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 5%;
+}
+.our-services .services-container {
+  display: flex;
+  flex-direction: row;
+}
+.our-services .services-container .service-item {
+  flex: 1 1 calc(33.333% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.our-services .services-container .service-item img {
+  width: 480px;
+  height: 320px;
+  object-fit: cover;
+}
+.our-services .services-container .service-item h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #050a3a;
+}
+
 /*# sourceMappingURL=style.css.map */
