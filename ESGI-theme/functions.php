@@ -84,6 +84,34 @@ function esgi_customize_register($wp_customize)
         'theme_supports' => '', // Rarely needed.
     ]);
 
+        // Ajouter un setting et un control pour le titre du héros
+        $wp_customize->add_setting('top_title', [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => __('Welcome to ESGI'),
+            'sanitize_callback' => 'sanitize_text_field',
+        ]);
+    
+        $wp_customize->add_control('top_title', [
+            'label' => __('Titre du Héros', 'ESGI'),
+            'section' => 'esgi_section',
+            'type' => 'text',
+        ]);
+    
+        // Ajouter un setting et un control pour l'image du héros
+        $wp_customize->add_setting('top_image', [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ]);
+    
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'top_image', [
+            'label' => __('Image du Héros', 'ESGI'),
+            'section' => 'esgi_section',
+            'settings' => 'top_image',
+        ]));
+
     // ajout d'un setting
     $wp_customize->add_setting('main_color', [
         'type' => 'theme_mod', // or 'option'

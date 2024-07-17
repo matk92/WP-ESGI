@@ -22,3 +22,9 @@
             ?>
         </div>
     </header>
+    <div class="hero">
+        <div class="container">
+            <h1><?php echo get_theme_mod('top_title'); ?></h1>
+            <img src="<?php echo get_theme_mod('top_image'); ?>">
+        </div>
+    </div>
