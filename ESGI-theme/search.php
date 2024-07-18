@@ -20,7 +20,7 @@
                     echo '<h2>' . get_the_title() . '</h2>';
                     echo '<div class="search-meta">';
                     echo '<span class="category">' . get_the_category_list(', ') . '</span>';
-                    echo '<span class="date">' . get_the_date() . '</span>';
+                    echo '<span class="date">' . get_the_date('F j, Y') . '</span>';
                     echo '</div>';
                     echo '<div class="search-excerpt">' . get_the_excerpt() . '</div>';
                     echo '</div>';

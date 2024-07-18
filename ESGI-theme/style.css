@@ -4761,12 +4761,12 @@ svg:hover path {
 }
 
 .container-search {
-  font-family: "Muli", sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 .container-search h1 {
   font-size: 48px;
   color: #0A0C32;
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -4778,31 +4778,33 @@ svg:hover path {
 
 .search-item {
   background-color: #ffffff;
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
   padding: 20px;
   width: calc(33.333% - 20px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .search-item h2 {
   font-size: 24px;
-  color: #0A0C32;
+  color: #050A3A;
   margin-bottom: 10px;
 }
 .search-item .search-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 10px;
+  gap: 10px;
 }
 .search-item .search-meta .category {
-  color: #FF57B2;
+  color: #050A3A;
 }
 .search-item .search-meta .date {
-  color: #0A0C32;
+  color: #050A3A;
 }
 .search-item .search-excerpt {
   font-size: 16px;
-  color: #333333;
+  color: #8A8A8A;
+}
+
+.container-search .search-results .search-item:last-child {
+  margin-bottom: 50px;
 }
 
 .about-us {
