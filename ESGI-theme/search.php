@@ -2,7 +2,7 @@
 
 <main id="site-main-wp" class="site-main-wp">
     <div class="container-search">
-        <h1>Résultats de la recherche pour <?php echo get_search_query(); ?></h1>
+        <h1>Search results for: <?php echo get_search_query(); ?></h1>
         <?php
         $types = ['page' => 'Page(s)', 'post' => 'Article(s)'];
         foreach ($types as $type => $label) {
@@ -13,18 +13,23 @@
             ];
             $query = new WP_Query($args);
             if ($query->have_posts()) {
-                echo '<h2>' . $query->found_posts . ' ' . $label . ' trouvé(s)</h2>';
-                echo '<ul>';
+                echo '<div class="search-results">';
                 while ($query->have_posts()) {
                     $query->the_post();
-                    echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                    echo '<div class="search-item">';
+                    echo '<h2>' . get_the_title() . '</h2>';
+                    echo '<div class="search-meta">';
+                    echo '<span class="category">' . get_the_category_list(', ') . '</span>';
+                    echo '<span class="date">' . get_the_date() . '</span>';
+                    echo '</div>';
+                    echo '<div class="search-excerpt">' . get_the_excerpt() . '</div>';
+                    echo '</div>';
                 }
-                echo '</ul>';
+                echo '</div>';
             }
             wp_reset_postdata();
         }
         ?>
     </div>
 </main>
-
 <?php get_footer(); ?>

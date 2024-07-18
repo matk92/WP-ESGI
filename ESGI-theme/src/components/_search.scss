@@ -1,7 +1,49 @@
 .container-search {
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Muli', sans-serif;;   
+    h1 {
+        font-size: 48px;
+        color: #0A0C32;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.container-search .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.search-item {
     background-color: #ffffff;
-    color: #000000;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
     padding: 20px;
-    text-align: left;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    h2 {
+        font-size: 24px;
+        color: #0A0C32;
+        margin-bottom: 10px;
+    }
+
+    .search-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        .category {
+            color: #FF57B2;
+        }
+
+        .date {
+            color: #0A0C32;
+        }
+    }
+
+    .search-excerpt {
+        font-size: 16px;
+        color: #333333;
+    }
 }
