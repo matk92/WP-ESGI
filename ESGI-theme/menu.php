@@ -17,5 +17,18 @@
         <span>&times;</span>
     </div>
 </div>
-<script src="script.js"></script>
+<button class="open-menu">☰</button>
 
+<script>
+    const menu = document.querySelector('.menu');
+    const openMenuButton = document.querySelector('.open-menu');
+    const closeMenuButton = document.querySelector('.close-menu span');
+
+    openMenuButton.addEventListener('click', function() {
+        menu.classList.add('open');
+    });
+
+    closeMenuButton.addEventListener('click', function() {
+        menu.classList.remove('open');
+    });
+</script>

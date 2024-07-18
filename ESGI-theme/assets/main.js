@@ -39,6 +39,3 @@ function fetchPage(page) {
 		});
 	});
 }
-document.querySelector('.close-menu span').addEventListener('click', function() {
-    document.querySelector('.menu').style.display = 'none';
-});
