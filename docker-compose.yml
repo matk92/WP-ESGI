@@ -21,7 +21,7 @@ services:
     volumes:
       - wp_data:/var/www/html
       - type: bind
-        source: ./ESGI-theme
+        source: ./ESGI-soutenance-theme
         target: /var/www/html/wp-content/themes/ESGI-soutenance-theme
       - type: bind
         source: ./ESGI-plugin
