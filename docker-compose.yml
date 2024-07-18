@@ -22,7 +22,7 @@ services:
       - wp_data:/var/www/html
       - type: bind
         source: ./ESGI-theme
-        target: /var/www/html/wp-content/themes/ESGI-theme
+        target: /var/www/html/wp-content/themes/ESGI-soutenance-theme
       - type: bind
         source: ./ESGI-plugin
         target: /var/www/html/wp-content/plugins/ESGI-plugin
