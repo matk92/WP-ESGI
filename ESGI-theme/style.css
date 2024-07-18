@@ -4853,6 +4853,39 @@ svg:hover path {
   margin-bottom: 20px;
 }
 
+.our-team {
+  font-family: "Mulish", sans-serif;
+}
+.our-team h1 {
+  color: #050a3a;
+  text-align: left;
+  margin-bottom: 2rem;
+  margin-left: 10%;
+}
+.our-team .team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+.our-team .team-container .team-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.our-team .team-container .team-item img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+.our-team .team-container .team-item .role,
+.our-team .team-container .team-item .phone,
+.our-team .team-container .team-item .email {
+  margin-top: 10px;
+}
+
 .our-services {
   font-family: "Mulish", sans-serif;
 }
@@ -4874,13 +4907,24 @@ svg:hover path {
   height: 320px;
   object-fit: cover;
 }
-.our-services h2 {
+
+.corp-parties {
+  font-family: "Mulish", sans-serif;
+}
+.corp-parties h2 {
   color: #050a3a;
+  font-size: 2.5em;
+  font-weight: 700;
   margin: 5%;
 }
-.our-services p {
-  color: #8A8A8A;
-  margin: 5%;
+.corp-parties p {
+  max-width: 50%;
+  margin-left: 5%;
+  margin-bottom: 2rem;
+}
+.corp-parties img {
+  width: 100%;
+  height: auto;
 }
 
 .our-partners {
@@ -4896,6 +4940,7 @@ svg:hover path {
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 5%;
 }
 .our-partners .partners-container .partner-item {
   margin: 20px;
@@ -4906,6 +4951,7 @@ svg:hover path {
 }
 
 .menu {
+  font-family: "Mulish", sans-serif;
   width: 100%;
   height: 40%;
   background-color: #050a3a;
@@ -4968,8 +5014,8 @@ svg:hover path {
   color: #050a3a;
   cursor: pointer;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 40px;
+  right: 20px;
   z-index: 1000;
 }
 

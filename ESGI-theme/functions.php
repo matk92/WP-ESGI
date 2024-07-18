@@ -102,7 +102,7 @@ function esgi_customize_register($wp_customize)
         $wp_customize->add_setting('top_image', [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
-            'default' => '',
+            'default' => get_template_directory_uri() . '/src/img/top-image.png',
             'sanitize_callback' => 'esc_url_raw',
         ]);
     
@@ -265,6 +265,51 @@ function esgi_customize_register($wp_customize)
         'type' => 'textarea',
     ));
 
+    for ($i = 1; $i <= 4; $i++) {
+        // Image Setting
+        $wp_customize->add_setting("team_image_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "team_image_$i", array(
+            'label' => __("Team Image $i", 'theme_textdomain'),
+            'section' => 'about_us_section',
+            'settings' => "team_image_$i",
+        )));
+    }
+    for ($i = 1; $i <= 4; $i++) {
+        // Role, phone and email settings
+        $wp_customize->add_setting("about_us_role_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control("about_us_role_$i", array(
+            'label' => __("Role $i", 'theme_textdomain'),
+            'section' => 'about_us_section',
+            'settings' => "about_us_role_$i",
+        ));
+
+        $wp_customize->add_setting("about_us_phone_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control("about_us_phone_$i", array(
+            'label' => __("Phone $i", 'theme_textdomain'),
+            'section' => 'about_us_section',
+            'settings' => "about_us_phone_$i",
+        ));
+    
+        $wp_customize->add_setting("about_us_email_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_email',
+        ));
+        $wp_customize->add_control("about_us_email_$i", array(
+            'label' => __("Email $i", 'theme_textdomain'),
+            'section' => 'about_us_section',
+            'settings' => "about_us_email_$i",
+        ));
+    }
+
     // Section "Our Services"
     $wp_customize->add_section('services_section', array(
         'title' => __('Our Services', 'theme_textdomain'),
@@ -283,6 +328,32 @@ function esgi_customize_register($wp_customize)
             'settings' => "service_image_$i",
         )));
     }
+    
+    $wp_customize->add_setting('service_corp', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+
+    $wp_customize->add_control('service_corp', [
+        'label' => __('Service Corporate', 'ESGI'),
+        'section' => 'services_section',
+        'type' => 'textarea',
+    ]);
+
+    $wp_customize->add_setting('service_corp_image', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'service_corp_image', [
+        'label' => __('Image du Service Corporate', 'ESGI'),
+        'section' => 'services_section',
+        'settings' => 'service_corp_image',
+    ]));
 
     // Section "Our Partners"
     $wp_customize->add_section('partners_section', array(
@@ -361,3 +432,30 @@ function esgi_widgets_init() {
         'after_title'   => '</h2>',
     ));
 }
+
+function esgi_create_initial_pages() {
+    $pages = [
+        'about-us' => ['title' => 'About Us', 'page' => 'page-about.php'],
+        'services' => ['title' => 'Services', 'page' => 'page-services.php'],
+        'partners' => ['title' => 'Partners', 'page' => 'page-partners.php'],
+    ];
+
+    foreach ($pages as $slug => $page_info) {
+        $page_check = get_page_by_path($slug);
+        if (!isset($page_check->ID)) {
+            $page = [
+                'post_type' => 'page',
+                'post_title' => $page_info['title'],
+                'post_status' => 'publish',
+                'post_name' => $slug,
+                'post_content' => '',
+                'meta_input' => [
+                    '_wp_page_template' => $page_info['page'],
+                ],
+            ];
+            wp_insert_post($page);
+        }
+    }
+}
+add_action('after_switch_theme', 'esgi_create_initial_pages');
+
