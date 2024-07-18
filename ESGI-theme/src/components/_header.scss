@@ -30,6 +30,11 @@
   color: #050A3A;
   font-size: 3em;
   max-width: 50%;
+
+  @media (max-width: 600px) {
+    max-width: none;
+    text-align: center;
+  }
 }
 
 .top-image {

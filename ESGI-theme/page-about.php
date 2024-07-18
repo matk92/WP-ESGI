@@ -8,31 +8,14 @@ get_template_part('template-parts/about-us');
 <div class="our-team">
     <h1>Our Team</h1>
     <div class="team-container">
-        <div class="team-item">
-            <img src="<?php echo get_theme_mod('team_image_1'); ?>">
-            <div class="role"><?php echo get_theme_mod('about_us_role_1'); ?></div>
-            <div class="phone"><?php echo get_theme_mod('about_us_phone_1'); ?></div>
-            <div class="email"><?php echo get_theme_mod('about_us_email_1'); ?></div>
-        </div>
-        <div class="team-item">
-            <img src="<?php echo get_theme_mod('team_image_2'); ?>">
-            <div class="role"><?php echo get_theme_mod('about_us_role_2'); ?></div>
-            <div class="phone"><?php echo get_theme_mod('about_us_phone_2'); ?></div>
-            <div class="email"><?php echo get_theme_mod('about_us_email_2'); ?></div>
-        </div>
-        <div class="team-item">
-            <img src="<?php echo get_theme_mod('team_image_3'); ?>">
-            <div class="role"><?php echo get_theme_mod('about_us_role_3'); ?></div>
-            <div class="phone"><?php echo get_theme_mod('about_us_phone_3'); ?></div>
-            <div class="email"><?php echo get_theme_mod('about_us_email_3'); ?></div>
-        </div>
-        <div class="team-item">
-            <img src="<?php echo get_theme_mod('team_image_4'); ?>">
-            <div class="role"><?php echo get_theme_mod('about_us_role_4'); ?></div>
-            <div class="phone"><?php echo get_theme_mod('about_us_phone_4'); ?></div>
-            <div class="email"><?php echo get_theme_mod('about_us_email_4'); ?></div>
-        </div>
+        <?php for ($i = 1; $i <= 4; $i++): ?>
+            <div class="team-item">
+                <img src="<?php echo get_theme_mod("team_image_$i", get_template_directory_uri() . "/src/img/team$i.png"); ?>" alt="Team Member <?php echo $i; ?>">
+                <div class="role"><?php echo get_theme_mod("about_us_role_$i", "Role $i"); ?></div>
+                <div class="phone"><?php echo get_theme_mod("about_us_phone_$i", "+33 1 53 31 25 23"); ?></div>
+                <div class="email"><?php echo get_theme_mod("about_us_email_$i", "email$i@example.com"); ?></div>
+            </div>
+        <?php endfor; ?>
     </div>
 </div>
-
 <?php get_footer(); ?>

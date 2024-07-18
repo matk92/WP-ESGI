@@ -88,7 +88,7 @@ function esgi_customize_register($wp_customize)
         $wp_customize->add_setting('top_title', [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
-            'default' => __('A really professional structure for all your events!'),
+            'default' => 'A really professional structure for all your events!',
             'sanitize_callback' => 'sanitize_text_field',
         ]);
     
@@ -221,7 +221,7 @@ function esgi_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('about_us_image', array(
-        'default' => '',
+        'default' => get_template_directory_uri() . '/src/img/about.png',
         'sanitize_callback' => 'esc_url_raw',
     ));
 
@@ -268,7 +268,7 @@ function esgi_customize_register($wp_customize)
     for ($i = 1; $i <= 4; $i++) {
         // Image Setting
         $wp_customize->add_setting("team_image_$i", array(
-            'default' => '',
+            'default' => get_template_directory_uri() . "/src/img/team$i.png",
             'sanitize_callback' => 'esc_url_raw',
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "team_image_$i", array(
@@ -280,7 +280,7 @@ function esgi_customize_register($wp_customize)
     for ($i = 1; $i <= 4; $i++) {
         // Role, phone and email settings
         $wp_customize->add_setting("about_us_role_$i", array(
-            'default' => '',
+            'default' => 'CEO',
             'sanitize_callback' => 'sanitize_text_field',
         ));
         $wp_customize->add_control("about_us_role_$i", array(
@@ -290,7 +290,7 @@ function esgi_customize_register($wp_customize)
         ));
 
         $wp_customize->add_setting("about_us_phone_$i", array(
-            'default' => '',
+            'default' => '+33 1 53 31 25 23',
             'sanitize_callback' => 'sanitize_text_field',
         ));
         $wp_customize->add_control("about_us_phone_$i", array(
@@ -300,7 +300,7 @@ function esgi_customize_register($wp_customize)
         ));
     
         $wp_customize->add_setting("about_us_email_$i", array(
-            'default' => '',
+            'default' => 'sales@company.com',
             'sanitize_callback' => 'sanitize_email',
         ));
         $wp_customize->add_control("about_us_email_$i", array(
@@ -319,7 +319,7 @@ function esgi_customize_register($wp_customize)
     for ($i = 1; $i <= 4; $i++) {
         // Image Setting
         $wp_customize->add_setting("service_image_$i", array(
-            'default' => '',
+            'default' => get_template_directory_uri() . "/src/img/service$i.png",
             'sanitize_callback' => 'esc_url_raw',
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "service_image_$i", array(
@@ -332,7 +332,7 @@ function esgi_customize_register($wp_customize)
     $wp_customize->add_setting('service_corp', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'Specializing in the creation of exceptional events for private and corporate clients, we design, plan and manage every project from conception to execution. ',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
 
@@ -345,7 +345,7 @@ function esgi_customize_register($wp_customize)
     $wp_customize->add_setting('service_corp_image', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => get_template_directory_uri() . '/src/img/corp.png',
         'sanitize_callback' => 'esc_url_raw',
     ]);
 
@@ -364,7 +364,7 @@ function esgi_customize_register($wp_customize)
     // Adding settings and controls for each partner logo
     for ($i = 1; $i <= 6; $i++) {
         $wp_customize->add_setting("partner_logo_$i", array(
-            'default' => '',
+            'default' => get_template_directory_uri() . "/src/img/partner$i.jpg",
             'sanitize_callback' => 'esc_url_raw',
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "partner_logo_$i", array(

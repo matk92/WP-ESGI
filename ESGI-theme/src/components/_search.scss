@@ -12,13 +12,20 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+      }
 }
 
 .search-item {
     background-color: #ffffff;
     padding: 20px;
     width: calc(33.333% - 20px);
+
+    @media (max-width: 600px) {
+        width: 100%;
+      }
     
     
     h2 {

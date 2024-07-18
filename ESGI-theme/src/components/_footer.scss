@@ -24,6 +24,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
 
     .contact-info {
       margin-right: 50px;

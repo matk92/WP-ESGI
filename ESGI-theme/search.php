@@ -17,7 +17,7 @@
                 while ($query->have_posts()) {
                     $query->the_post();
                     echo '<div class="search-item">';
-                    echo '<h2>' . get_the_title() . '</h2>';
+                    echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
                     echo '<div class="search-meta">';
                     echo '<span class="category">' . get_the_category_list(', ') . '</span>';
                     echo '<span class="date">' . get_the_date('F j, Y') . '</span>';
