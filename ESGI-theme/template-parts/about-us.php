@@ -5,7 +5,7 @@
     </p>
     <div class="about-content">
         <div class="image-container">
-            <img src="<?php echo get_theme_mod('about_us_image', get_template_directory_uri() . '/src/img/about.png'); ?>"/>
+            <img src="<?php echo get_theme_mod('about_us_image', get_template_directory_uri() . '/src/img/about.jpg'); ?>"/>
         </div>
         <div class="custom-fields">
             <h2>Who are we?</h2>

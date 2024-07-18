@@ -102,7 +102,7 @@ function esgi_customize_register($wp_customize)
         $wp_customize->add_setting('top_image', [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
-            'default' => get_template_directory_uri() . '/src/img/top-image.png',
+            'default' => get_template_directory_uri() . '/src/img/top-image.jpg',
             'sanitize_callback' => 'esc_url_raw',
         ]);
     
@@ -221,7 +221,7 @@ function esgi_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('about_us_image', array(
-        'default' => get_template_directory_uri() . '/src/img/about.png',
+        'default' => get_template_directory_uri() . '/src/img/about.jpg',
         'sanitize_callback' => 'esc_url_raw',
     ));
 
@@ -268,7 +268,7 @@ function esgi_customize_register($wp_customize)
     for ($i = 1; $i <= 4; $i++) {
         // Image Setting
         $wp_customize->add_setting("team_image_$i", array(
-            'default' => get_template_directory_uri() . "/src/img/team$i.png",
+            'default' => get_template_directory_uri() . "/src/img/team$i.jpg",
             'sanitize_callback' => 'esc_url_raw',
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "team_image_$i", array(
@@ -319,7 +319,7 @@ function esgi_customize_register($wp_customize)
     for ($i = 1; $i <= 4; $i++) {
         // Image Setting
         $wp_customize->add_setting("service_image_$i", array(
-            'default' => get_template_directory_uri() . "/src/img/service$i.png",
+            'default' => get_template_directory_uri() . "/src/img/service$i.jpg",
             'sanitize_callback' => 'esc_url_raw',
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "service_image_$i", array(
@@ -345,7 +345,7 @@ function esgi_customize_register($wp_customize)
     $wp_customize->add_setting('service_corp_image', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => get_template_directory_uri() . '/src/img/corp.png',
+        'default' => get_template_directory_uri() . '/src/img/corp.jpg',
         'sanitize_callback' => 'esc_url_raw',
     ]);
 

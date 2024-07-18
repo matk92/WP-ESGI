@@ -8,7 +8,7 @@ get_template_part('template-parts/services');
     <div class="corp-parties">
         <h2>Corp. Parties</h2>
         <p><?php echo get_theme_mod('service_corp', 'Specializing in the creation of exceptional events for private and corporate clients, we design, plan and manage every project from conception to execution. '); ?></p>
-        <img src="<?php echo get_theme_mod("service_corp_image", get_template_directory_uri() . "/src/img/corp.png"); ?>" alt="Corp">
+        <img src="<?php echo get_theme_mod("service_corp_image", get_template_directory_uri() . "/src/img/corp.jpg"); ?>" alt="Corp">
     </div>
 </div>
 
