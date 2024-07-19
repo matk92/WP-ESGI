@@ -1,17 +1,20 @@
+<?php
+// menu.php
+?>
 <div class="menu">
     <div class="logo">
         <h1>ESGI.</h1>
         <p>Or try Search</p>
     </div>
     <nav class="menu-items">
-        <ul>
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="about-us">About Us</a></li>
-            <li><a href="services">Services</a></li>
-            <li><a href="partners">Partners</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-        </ul>
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'primary_menu',
+            'container' => false,
+            'menu_class' => 'nav-menu',
+            'fallback_cb' => '__return_false'
+        ));
+        ?>
     </nav>
     <div class="close-menu">
         <span>&times;</span>

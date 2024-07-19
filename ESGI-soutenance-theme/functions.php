@@ -45,6 +45,36 @@ function esgi_register_nav_menu()
     ]);
 }
 
+// Ajouter des liens par défaut dans le menu
+add_action('after_switch_theme', 'esgi_setup_default_menus');
+function esgi_setup_default_menus()
+{
+    $menu_name = 'Primary Menu';
+    $menu_exists = wp_get_nav_menu_object($menu_name);
+
+    if (!$menu_exists) {
+        $menu_id = wp_create_nav_menu($menu_name);
+
+        $pages = [
+            'Home' => home_url('/'),
+            'About Us' => home_url('/about'),
+            'Services' => home_url('/services'),
+            'Partners' => home_url('/partners'),
+        ];
+
+        foreach ($pages as $title => $url) {
+            wp_update_nav_menu_item($menu_id, 0, [
+                'menu-item-title' => $title,
+                'menu-item-url' => $url,
+                'menu-item-status' => 'publish',
+            ]);
+        }
+
+        $locations = get_theme_mod('nav_menu_locations');
+        $locations['primary_menu'] = $menu_id;
+        set_theme_mod('nav_menu_locations', $locations);
+    }
+}
 
 // Fonction "helper" de génération d'icones svg
 function esgi_getIcon($name)
